@@ -15,6 +15,7 @@ if ($saveLocation -eq "screen"){
     $logFileLocation = $compName + ".txt"
     # Same as above version, but with output to both screen and log file.
     $output = Get-WmiObject Win32_Product -ComputerName $compName -Credential $Credential | select Name,Version | Out-File $logFileLocation
+    Write-Output "Log file was saved as :" $logFileLocation
     Write-Output $output | Out-Host
     Pause
 }
